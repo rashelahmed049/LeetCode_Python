@@ -1,0 +1,12 @@
+#11_Container_with_most_water_(Medium)
+def max_water(tank):
+  l,r = 0,len(tank)-1
+  area = 0
+  while l<r:
+    area = max(area,min(tank[l],tank[r]) * (r-l))
+    if tank[l]<tank[r]:
+      l+=1
+    else:
+      r-=1
+  return area
+tank = [,8,6,2,5,4,8,3,7]
