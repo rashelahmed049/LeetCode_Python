@@ -1,0 +1,12 @@
+#263_Ugly_Number_(Easy)
+
+def ugly_number(n):
+    if num <2:
+        return False
+    nums =[2,3,5]
+    for p in nums:
+        while n%p == 0:
+            n = n//p
+    return n==1
+    
+print(ugly_number(6))
