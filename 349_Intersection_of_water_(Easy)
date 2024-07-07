@@ -1,0 +1,10 @@
+#349_Intersection_of_water_(Easy)
+def two_arrays(nums1,nums2):
+    st = set()
+    for i in nums1:
+        if i in nums2:
+            st.add(i)
+    return st
+nums1 = [1,2,2,]
+nums2 = [2,2]
+print(two_arrays(nums1,nums2))
