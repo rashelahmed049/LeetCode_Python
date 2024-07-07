@@ -1,0 +1,14 @@
+#3 Longest Substring Without Repeating Characters
+def longest_substring(s):
+    st = set()
+    l,res = 0 ,0
+    for i in range(len(s)):
+        if s[i] in st:
+            while s[i] in st:
+                st.remove(s[l])
+                l+=1
+        st.add(s[i])
+        res = max(res, i-l +1)
+    return res
+s = "abcabcbb"
+print(longest_substring(s))
