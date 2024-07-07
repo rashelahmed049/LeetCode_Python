@@ -1,10 +1,10 @@
 #1518. Water Bottles
-def water_bottles(n, ex):
-    full = empty = n 
-    while empty >= ex:
-        rem = empty // ex
-        empty = empty // ex
-        n+=rem
-    return n
+def water_bottles(numBottles, numExchange):
+    empty = numBottles
+    while empty >= numExchange:
+        rem = empty // numExchange
+        empty = (empty // numExchange) + (empty % numExchange)
+        numExchange += rem
+    return numExchange
     
 print(water_bottles(9,3))
