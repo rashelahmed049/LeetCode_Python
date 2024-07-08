@@ -1,0 +1,16 @@
+#1103. Distribute Candies to People
+candies,np = 7,4
+output =[0] * np
+i,j=0,1
+while candies > 0:
+    if i > np:
+        i==0
+    if candies >= j :
+        output[i]+=j
+        candies-=j
+        j += 1
+    else:
+        output[i] += candies
+        break
+    i+=1
+print(output)
