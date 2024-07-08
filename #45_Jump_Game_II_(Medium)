@@ -1,11 +1,11 @@
 #45_Jump Game II (Medium)
 def max_jump(nums):
-    l = r = mx= res =  0
+    l = r = highest_jump = res =  0
     while r < len(nums):
         for i in range(r+1):
-            mx = max(mx, i + nums[i])
+            highest_jump = max(highest_jump, i + nums[i])
         l=r+1
-        r = mx
+        r = highest_jump
         res+=1
     return res
 nums = [2,3,1,1,4]
