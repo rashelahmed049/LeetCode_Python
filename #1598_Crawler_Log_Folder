@@ -1,0 +1,10 @@
+#1598. Crawler Log Folder
+logs = ["d1/","d2/","../","d21/","./"]
+operations = ["./","../"]
+st = set()
+for i in range(len(logs)):
+    if logs[i] not in operations:
+        st.add(logs[i])
+    elif logs[i] == '../':
+        st.remove(logs[i-1])
+print(len(st))
