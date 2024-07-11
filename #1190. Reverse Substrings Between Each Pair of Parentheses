@@ -1,0 +1,16 @@
+#1190. Reverse Substrings Between Each Pair of Parentheses
+s = '(u(love)i)'
+stack = []
+for c in s:
+    if c != ')':
+        stack.append(c)
+    else:
+        portion =[]
+        while stack[-1] != '(':
+            portion.append(stack.pop())
+        stack.pop()
+        print('portion:', portion)
+        stack.extend(portion)
+        print('after extending:',stack)
+print(stack)
+            
