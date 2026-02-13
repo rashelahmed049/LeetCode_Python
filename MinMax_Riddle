@@ -1,0 +1,22 @@
+# HackerRank MinMax Riddle(Medium level)
+#a = [6,3,5,1,12]
+a = [2,6,1,12]
+chunk = len(a)
+res = []
+while chunk > 0 :
+  #print(f'current chunk value is {chunk}')
+  t = []
+  mn = []
+  for i in range(0,(len(a) - chunk ) + 1 ):
+    tmp_window_list = a[i:i+(chunk)]
+    m = min(tmp_window_list)
+    #print(f'tmp window list is {tmp_window_list} ')
+    mn.append(m)
+    t.append(tmp_window_list)
+    #print(f'list of chunk value is {t} ') 
+    #print(f'min value from  each sublist {mn}')
+  
+  res.append(max(mn))
+  #print(f"current res value {res} \n")
+  chunk-=1
+print(res[::-1])
