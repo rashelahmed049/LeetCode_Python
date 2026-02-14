@@ -1,0 +1,17 @@
+i = [100, 90, 90, 80]
+p = [70, 80, 105]
+
+unique_scores = sorted(set(i), reverse=True)
+print(unique_scores)
+
+def get_rank(score, unique_scores):
+    for idx, val in enumerate(unique_scores):
+        if score >= val:
+            return idx + 1
+    return len(unique_scores) + 1
+
+# Get ranks for p
+p_ranks = [get_rank(score, unique_scores) for score in p]
+p_ranks
+
+
