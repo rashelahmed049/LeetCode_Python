@@ -1,0 +1,45 @@
+class node:
+  def __init__(self,data):
+    self.data = data
+    self.next = None
+
+class singly_linked_list:
+  def __init__(self):
+    self.head = None
+
+  def insert(self,data):
+    if self.head is None:
+      n = node(data)
+      self.head = n
+    else:
+      t = self.head
+      while t.next:
+        t = t.next
+      t.next = node(data)
+  def disp(self):
+    t = self.head
+    while t:
+      print(t.data,end = " ")
+      t = t.next
+    print()
+  def remove_dup(self):
+    curr = self.head
+    while curr:
+      while curr.next and curr.data == curr.next.data:
+        curr.next = curr.next.next
+      curr = curr.next
+    return self.head
+
+
+
+l = [1,2,3,3,4,4,5]
+l2 = [1,1,1,4,5]
+s = singly_linked_list()
+for i in l:
+  s.insert(i)
+s.disp()
+s.remove_dup()
+s.disp()
+
+
+
