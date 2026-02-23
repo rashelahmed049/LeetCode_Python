@@ -1,0 +1,17 @@
+#zigzag
+def zigzag(s,n):
+  final = ""
+  if len(s) == 0 :
+    return 0
+  for r in range(n):
+    inc = 2*(n -1)
+    for i in range(r, len(s), inc):
+      final += s[i]
+      if r > 0 and r < n-1 and (i + inc -2*r) < len(s):
+        final += s[i + inc - 2*r]
+  return final
+
+
+s = "paypalishiring"
+n = 4
+print(zigzag(s,n))
