@@ -1,0 +1,11 @@
+nums = [1,2,2,3,3,3,3,5]
+
+def rs(nums):
+  l = 0 
+  for i in range(len(nums)):
+    if nums[i] != nums[l]:
+      l+=1
+      nums[l] = nums[i]
+
+  return nums[:l+1]
+print(rs(nums))
